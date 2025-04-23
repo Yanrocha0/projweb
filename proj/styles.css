@@ -1,0 +1,39 @@
+/* Espaço para o conteúdo por causa da navbar fixa */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #main-content {
+    padding-top: 80px;
+  }
+  
+  /* Navbar */
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+  
+  .nav-link {
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #00d4ff;
+  }
+  
+  /* Carousel - tamanho reduzido */
+  .carousel-inner img {
+    width: 100%;
+    height: 300px;       /* Tamanho reduzido */
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .carousel-inner img {
+      height: 200px;
+    }
+  }
+  
