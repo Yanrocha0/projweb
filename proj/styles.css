@@ -116,3 +116,36 @@ footer {
 footer p {
   font-size: 0.9rem; /* Diminuindo o tamanho da fonte no rodapé */
 }
+/* FAQ */
+.accordion-button {
+  background-color: #121212; /* Cor de fundo do botão do acordeão */
+  color: #f0f0f0; /* Cor do texto */
+  border: 1px solid #00d4ff; /* Borda azul */
+  font-size: 1.1rem; /* Tamanho do texto */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #00d4ff; /* Cor de fundo quando o item está aberto */
+  color: #121212; /* Cor do texto quando aberto */
+}
+
+.accordion-button:hover {
+  background-color: #008cba; /* Cor de fundo ao passar o mouse */
+  color: #f0f0f0; /* Cor do texto ao passar o mouse */
+  border: 1px solid #008cba; /* Borda quando passa o mouse */
+}
+
+.accordion-item {
+  background-color: #121212; /* Cor de fundo do item */
+  border: none; /* Remover borda */
+  margin-bottom: 10px; /* Espaçamento entre os itens */
+}
+
+.accordion-body {
+  background-color: #1a1a1a; /* Fundo mais escuro para o conteúdo do acordeão */
+  color: #ccc; /* Cor do texto do conteúdo */
+}
+
+.accordion-body p {
+  font-size: 1rem; /* Tamanho do texto no conteúdo */
+}
