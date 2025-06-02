@@ -14,7 +14,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
-        <img src="LogodoSUA-removebg-preview.png" height="50" alt="Logo SUA">
+        <img src="LogodoSUA__2_-removebg-preview.png" height="50" alt="Logo SUA">
       </a>
   
       <ul class="navbar-nav d-flex flex-row me-auto mb-2 mb-lg-0">
@@ -52,7 +52,7 @@
 
   <div class="row g-4">
     <!-- Card 1 -->
-    <div class="col-md-4">
+    <div class="col-md-4 reveal">
       <div class="card text-center shadow-lg">
         <div class="card-body">
           <i class="bi bi-shield-lock-fill" style="font-size: 3rem; color: #00d4ff;"></i>
@@ -63,7 +63,7 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="col-md-4">
+    <div class="col-md-4 reveal">
       <div class="card text-center shadow-lg">
         <div class="card-body">
           <i class="bi bi-people-fill" style="font-size: 3rem; color: #00d4ff;"></i>
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="col-md-4">
+    <div class="col-md-4 reveal">
       <div class="card text-center shadow-lg">
         <div class="card-body">
           <i class="bi bi-graph-up" style="font-size: 3rem; color: #00d4ff;"></i>
@@ -85,7 +85,7 @@
     </div>
 
     <!-- Card 4 -->
-    <div class="col-md-4">
+    <div class="col-md-4 reveal">
       <div class="card text-center shadow-lg">
         <div class="card-body">
           <i class="bi bi-person-badge-fill" style="font-size: 3rem; color: #00d4ff;"></i>
@@ -96,7 +96,7 @@
     </div>
 
     <!-- Card 5 -->
-    <div class="col-md-4">
+    <div class="col-md-4 reveal">
       <div class="card text-center shadow-lg">
         <div class="card-body">
           <i class="bi bi-bell-fill" style="font-size: 3rem; color: #00d4ff;"></i>
@@ -107,7 +107,7 @@
     </div>
 
     <!-- Card 6 -->
-    <div class="col-md-4">
+    <div class="col-md-4 reveal">
       <div class="card text-center shadow-lg">
         <div class="card-body">
           <i class="bi bi-gear-fill" style="font-size: 3rem; color: #00d4ff;"></i>
@@ -120,14 +120,34 @@
   </div>
 </div>
 <!-- Rodapé -->
-<footer class="bg-dark text-white text-center p-4 mt-5 fixed-bottom">
-    <div class="container">
-      <p>Entre em contato: <a href="mailto:suporte@sua.com" style="color: #00d4ff;">iserj.cem@gmail.com</a></p>
-      <p class="mb-0">Projeto desenvolvido para TCC 2025 – Yan Rocha, Eduardo, Thiago Atella e José Filipe</p>
-    </div>
-  </footer>
+
+
+
+<footer class="footer-translucido text-white text-center p-4 mt-5">
+  <div class="container">
+    <p>Entre em contato: <a href="mailto:suporte@sua.com" style="color: #00d4ff;">iserj.cem@gmail.com</a></p>
+    <p class="mb-0">Projeto desenvolvido para TCC 2025 – Yan Rocha, Eduardo, Thiago Atella e José Filipe</p>
+  </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  function scrollReveal() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const revealPoint = 150;
+
+      if (elementTop < windowHeight - revealPoint) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', scrollReveal);
+  window.addEventListener('load', scrollReveal);
+</script>
 
 </body>
 </html>

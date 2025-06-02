@@ -149,3 +149,220 @@ footer p {
 .accordion-body p {
   font-size: 1rem; /* Tamanho do texto no conteúdo */
 }
+.tecnologias-destaque {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  padding: 50px 20px;
+  border-radius: 20px;
+  color: #f0f0f0;
+}
+
+.titulo-tecnologia {
+  color: #00d4ff;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.texto-tecnologia {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.imagem-tecnologia {
+  max-width: 200px;
+  filter: drop-shadow(0 0 10px #00d4ff);
+  transition: transform 0.4s ease;
+}
+
+.imagem-tecnologia:hover {
+  transform: scale(1.1);
+}
+
+/* Animação simples de revelação */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+/* Estilo das tecnologias */
+.titulo-tecnologia {
+  color: #00d4ff;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.texto-tecnologia {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.imagem-tecnologia {
+  max-width: 200px;
+  filter: drop-shadow(0 0 10px #00d4ff);
+  transition: transform 0.4s ease;
+}
+
+.imagem-tecnologia:hover {
+  transform: scale(1.1);
+}
+
+/* Animação de entrada */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+h1,
+h1.mb-4 {
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+h2, 
+h2.mb-4{
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+ .reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+
+h1:hover {
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+h1, h2 {
+  position: relative;
+  display: inline-block;
+}
+
+h1::after, h2::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: #00d4ff;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.3s ease;
+}
+
+h1:hover::after, h2:hover::after {
+  width: 100%;
+}
+.is-invalid {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+}
+.footer-translucido {
+  background-color: rgba(18, 18, 18, 0.5); /* semitransparente */
+  position: relative; /* não fixa mais no rodapé da tela */
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.footer-translucido:hover {
+  background-color: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(10px);
+}
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo-principal {
+  flex: 1;
+}
+
+/* Rodapé fixo visualmente ao final da página */
+.footer-translucido {
+  background-color: rgba(18, 18, 18, 0.5);
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.footer-translucido:hover {
+  background-color: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Estilo moderno para campos de formulário */
+form .form-control {
+  background-color: #121212;
+  border: 1px solid #333;
+  color: #f0f0f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 12px 15px;
+}
+
+form .form-control:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  background-color: #1a1a1a;
+  color: #00d4ff;
+}
+
+/* Labels mais estilosos */
+form .form-label {
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+/* Botão mais fluido */
+form button.btn-primary {
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+
+/* Alerta de sucesso estilizado */
+#mensagem-sucesso {
+  border: 1px solid #00d4ff;
+  background-color: #1a1a1a;
+  color: #00d4ff;
+  font-weight: 500;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}
+#botao-duvida {
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #00d4ff;
+  border: 1px solid #00d4ff;
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+#botao-duvida:hover {
+  background-color: #00d4ff;
+  color: #000428;
+}
+
+#caixa-duvida .form-control {
+  background-color: #121212;
+  border: 1px solid #00d4ff;
+  color: #f0f0f0;
+  border-radius: 8px;
+  padding: 15px;
+}
