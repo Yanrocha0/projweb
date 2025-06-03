@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUA - Estacionamento</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos Adicionais para Melhorar a Apresentação */
+    body {
+      background-color: #0f0f0f; /* Fundo mais escuro para contraste */
+      color: #f0f0f0; /* Cor do texto padrão mais clara */
+    }
+
+    .navbar {
+      background-color: #1a1a1a; /* Fundo da navbar mais escuro */
+      border-bottom: 1px solid #333;
+    }
+
+    .navbar-brand img {
+      filter: brightness(1.2); /* Deixa o logo um pouco mais claro */
+    }
+
+    .nav-link {
+      color: #bbbbbb !important; /* Cor dos links mais suave */
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #00d4ff !important; /* Cor de hover para os links */
+    }
+
+    .dropdown-menu {
+      background-color: #1a1a1a;
+      border: none;
+    }
+
+    .dropdown-item {
+      color: #bbbbbb;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #00d4ff;
+      color: #1a1a1a; /* Texto mais escuro no hover */
+    }
+
+    .titulo-tecnologia {
+      color: #00d4ff; /* Títulos em destaque com a cor de acentuação */
+      font-weight: 700;
+      text-shadow: 0 0 5px rgba(0, 212, 255, 0.4);
+    }
+
+    .titulo-tecnologia-pequeno {
+      color: #00d4ff;
+      font-weight: 600;
+    }
+
+    .texto-tecnologia {
+      color: #cccccc; /* Texto mais claro para melhor legibilidade */
+      line-height: 1.8;
+    }
+
+    .card {
+      background-color: #1a1a1a; /* Fundo dos cards mais escuro */
+      border: 1px solid #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* Efeito de elevação no hover */
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2); /* Sombra mais destacada */
+    }
+
+    .card-title {
+      color: #00d4ff;
+      font-weight: 600;
+    }
+
+    .card-text {
+      color: #bbbbbb;
+    }
+
+    .imagem-parceira {
+      filter: grayscale(80%) brightness(1.2); /* Parceiras em tons de cinza com brilho */
+      transition: filter 0.3s ease;
+    }
+
+    .imagem-parceira:hover {
+      filter: grayscale(0%) brightness(1); /* Colorida no hover */
+    }
+
+    .icone-defesa {
+      color: #00d4ff; /* Ícones de defesa na cor de acentuação */
+    }
+
+    .texto-defesa-lista li {
+      padding-left: 1rem; /* Espaçamento para os itens da lista */
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Adicione mais regras ao styles.css se preferir separá-las */
+    
+    /* Custom styles for images */
+    .img-rounded-corners {
+        border-radius: 15px; /* Adjust as needed for desired roundness */
+    }
+
+    /* Adjust specific image sizes for better presentation */
+    .img-main-feature {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px; /* Apply rounded corners */
+    }
+
+    .img-parking-control {
+        max-width: 90%;
+        height: auto;
+        border-radius: 15px; /* Apply rounded corners */
+    }
+
+    .img-why-sua {
+        max-width: 70%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 15px; /* Apply rounded corners */
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="LogodoSUA__2_-removebg-preview.png" height="50" alt="Logo SUA">
+    </a>
+
+    <ul class="navbar-nav d-flex flex-row me-auto mb-2 mb-lg-0">
+      <li class="nav-item dropdown px-2">
+        <a class="nav-link dropdown-toggle" href="#" id="setoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Setores
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="setoresDropdown">
+          <li><a class="dropdown-item" href="aeroporto.html" target="_blank">Aeroporto</a></li>
+          <li><a class="dropdown-item" href="audiotorio.html" target="_blank">Auditório</a></li>
+          <li><a class="dropdown-item" href="estacionamento.html" target="_blank">Estacionamento</a></li>
+          <li><a class="dropdown-item" href="refeitorio.html" target="_blank">Refeitório</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item px-2">
+        <a class="nav-link" href="funcionalidades.html">Funcionalidades</a>
+      </li>
+      <li class="nav-item px-2">
+        <a class="nav-link" href="sobre-nos.html">Sobre Nós</a>
+      </li>
+
+      <li class="nav-item px-2">
+        <a class="nav-link" href="equipe.html">Equipe</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
+      <li class="nav-item me-3">
+        <a class="nav-link" href="contato.html" title="Contato">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#00d4ff" class="bi bi-question-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+          </svg>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLoginCadastro" title="Login">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#00d4ff" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+<div class="container my-5 reveal">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="https://d31u1w5651ly23.cloudfront.net/articulos/articulos-682379.jpg" class="img-fluid img-main-feature" alt="Gestão Inteligente de Estacionamentos">
+    </div>
+    <div class="col-md-6">
+      <h2 class="titulo-tecnologia">Gestão Inteligente de Estacionamentos</h2>
+      <p class="texto-tecnologia">
+        Nosso sistema de acesso inteligente otimiza a gestão de estacionamentos de todos os portes. Com tecnologias como QR Code, reconhecimento de placa (LPR) e RFID, garantimos segurança, agilidade e controle total do fluxo de veículos.
+      </p>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h3 class="titulo-tecnologia mb-4">Empresas Parceiras em Estacionamento</h3>
+  <div class="row justify-content-center text-center">
+    <div class="col-6 col-md-3 mb-4">
+      <img src="localiza-1024.png" class="img-fluid imagem-parceira img-rounded-corners" alt="Localiza">
+    </div>
+    <div class="col-6 col-md-3 mb-4">
+      <img src="logo-movida-256.png" class="img-fluid imagem-parceira img-rounded-corners" alt="Movida">
+    </div>
+    <div class="col-6 col-md-3 mb-4">
+      <img src="park-removebg-preview.png" class="img-fluid imagem-parceira img-rounded-corners" alt="Parking Group">
+    </div>
+    <div class="col-6 col-md-3 mb-4">
+      <img src="https://logospng.org/download/estapar/estapar-4096.png" class="img-fluid imagem-parceira img-rounded-corners" alt="Estapar">
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <img src="https://assets.multiplan.com.br/Multiplan/filer_public/4e/2f/4e2f748d-7049-4456-a577-452e389deabd/421547063_777512214418518_8125250391411739009_n.jpg?ims=1000x" class="img-fluid img-parking-control" alt="Controle de Acesso na Entrada e Saída">
+    </div>
+    <div class="col-md-6 order-md-1">
+      <h3 class="titulo-tecnologia">Controle de Acesso na Entrada e Saída</h3>
+      <p class="texto-tecnologia">
+        Nosso sistema garante um fluxo contínuo e seguro de veículos. Automatizamos a identificação, o registro de entrada e saída, e a cobrança, eliminando gargalos e aprimorando a experiência do usuário.
+      </p>
+      <ul class="texto-tecnologia list-unstyled">
+        <li class="mb-2">✔️ Reconhecimento automático de placas (LPR)</li>
+        <li class="mb-2">✔️ Integração com tickets QR Code e aplicativos</li>
+        <li class="mb-2">✔️ Gestão de vagas em tempo real</li>
+        <li class="mb-2">✔️ Detecção de veículos não autorizados</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h3 class="titulo-tecnologia mb-4">Vantagens do Nosso Sistema em Estacionamentos</h3>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">Segurança Reforçada</h5>
+          <p class="card-text">Monitoramento contínuo, registro de acessos e prevenção de furtos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">Otimização de Receita</h5>
+          <p class="card-text">Controle preciso de permanência, tarifação flexível e relatórios detalhados.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">Experiência do Usuário</h5>
+          <p class="card-text">Entrada e saída rápidas, facilidade no pagamento e menos estresse.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h2 class="titulo-tecnologia mb-5">Por Que Estacionamentos Devem Adquirir o Sistema SUA?</h2>
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img src="https://www.mokosmart.com/wp-content/uploads/2022/03/Smart-parking-system-using-IoT.webp"
+           class="img-fluid rounded shadow-lg img-why-sua"
+           alt="Sistema de Estacionamento Inteligente">
+    </div>
+    <div class="col-md-6 text-start">
+      <p class="texto-tecnologia lead">
+        Em um mercado cada vez mais competitivo, um estacionamento eficiente e seguro é um diferencial. Nosso Sistema Universal de Acesso (SUA) não é apenas uma ferramenta de controle, mas um **investimento estratégico** que moderniza sua operação e eleva a satisfação do cliente.
+      </p>
+      <ul class="list-unstyled texto-tecnologia">
+        <li class="mb-3">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-car-front-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.35.435.534.447.85 1.059.85 1.717v3.54a2.5 2.5 0 0 1-.75 1.765l-.792.848A2.5 2.5 0 0 1 11.18 15H4.82a2.5 2.5 0 0 1-2.298-1.515l-.792-.848A2.5 2.5 0 0 1 1 11.29V7.266c0-.658.316-1.27.85-1.717.14-.116.275-.26.35-.435zM4 3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-.5 8a.5.5 0 0 0 0 1h8a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h8a.5.5 0 0 0 0-1z"/>
+            </svg>
+            Controle de Veículos e Vagas
+          </h5>
+          <p>O SUA oferece controle preciso sobre cada veículo que entra e sai, além de otimização inteligente de vagas, maximizando a capacidade e reduzindo o tempo de procura.</p>
+        </li>
+        <li class="mb-3">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-wallet-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2zM14 4H2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-3.5 0a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1h2z"/>
+            </svg>
+            Aumento da Rentabilidade
+          </h5>
+          <p>Com automação de cobranças, relatórios de ocupação e tarifação dinâmica, o sistema auxilia na maximização da receita e na redução de perdas financeiras.</p>
+        </li>
+        <li class="mb-3">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-headset-vr me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M12.5 10a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0v-1.5a.5.5 0 0 0-.5-.5m-1 0a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0v-1.5a.5.5 0 0 0-.5-.5m-6 0a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0v-1.5a.5.5 0 0 0-.5-.5M4.5 10a.5.5 0 0 0-.5.5v1.5a.5.5 0 0 0 1 0v-1.5a.5.5 0 0 0-.5-.5"/>
+              <path d="M13 12.5a.5.5 0 0 1 .5-.5h.5a.5.5 0 1 1 0 1h-.5a.5.5 0 0 1-.5-.5m-11 0a.5.5 0 0 1 .5-.5h.5a.5.5 0 1 1 0 1h-.5a.5.5 0 0 1-.5-.5"/>
+              <path d="M3.771 2.246A.993.993 0 0 1 4.5 2H6a2 2 0 0 1 2 2v2h2V4a2 2 0 0 1 2-2h1.5a.993.993 0 0 1 .729.246c.12.118.067.337-.086.541l-1.42 2.029A2 2 0 0 1 11.185 7H11a.5.5 0 0 0-.5.5v2.607a.5.5 0 0 0 .5.5H12c.56 0 1.074.128 1.545.359l.617.29a.5.5 0 0 0 .6-.217l.01-.026a.5.5 0 0 0-.01-.018l-.512-.338a.5.5 0 0 0-.17-.116.996.996 0 0 0-.17-.052C14.28 9.39 14.5 8.91 14.5 8.35v-1.5a.5.5 0 0 0-.5-.5h-.185a3 3 0 0 0-2.316-1.536L10 4V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v.185a3 3 0 0 0-2.316 1.536L3.5 6.35a.5.5 0 0 0-.5.5v1.5c0 .56.22 1.04.542 1.393a.999.999 0 0 0-.17.052c-.06.02-.12.043-.17.073l-.513.338a.5.5 0 0 0-.01.019.5.5 0 0 0 .6.217l.617-.29A2.5 2.5 0 0 0 4 10.607V7.5a.5.5 0 0 0-.5-.5h-.185a2 2 0 0 1-1.928-2.541z"/>
+            </svg>
+            Melhora da Experiência do Cliente
+          </h5>
+          <p>Ofereça agilidade, comodidade e uma sensação de segurança aos usuários, com pagamentos simplificados e vagas mais fáceis de encontrar, resultando em clientes satisfeitos.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h3 class="titulo-tecnologia mb-5">Nossas Linhas de Defesa do Sistema Universal de Acesso</h3>
+
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-6 col-md-8 mb-4 mb-lg-0">
+      <img src="https://images.unsplash.com/photo-1550505101-70014299b80e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+           class="img-fluid rounded shadow-lg img-why-sua"
+           alt="Sistema Universal de Acesso - Linhas de Defesa Estacionamento">
+    </div>
+
+    <div class="col-lg-6 col-md-12 text-start">
+      <ul class="list-unstyled texto-defesa-lista">
+        <li class="mb-4 reveal">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-camera-video-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 3.5a.5.5 0 0 1 .55-.5"/>
+              <path d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 3.5a.5.5 0 0 1 .55-.5"/>
+            </svg>
+            Monitoramento de Câmeras e LPR
+          </h5>
+          <p class="texto-tecnologia">
+            Nosso sistema integra-se a câmeras de segurança e tecnologia de reconhecimento de placas (LPR) para monitorar cada acesso e movimento no estacionamento, garantindo rastreabilidade.
+          </p>
+        </li>
+        <li class="mb-4 reveal">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cone-striped me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M9.97 4.908a.5.5 0 0 0-.227-.373L7.75 3.167.925 15h14.15L7.75 3.167 6.257 4.535a.5.5 0 0 0-.227.373L7.5 7.72V15h1V7.72z"/>
+            </svg>
+            Gestão de Incidentes e Alertas
+          </h5>
+          <p class="texto-tecnologia">
+            Com inteligência artificial, identificamos comportamentos anormais, como veículos estacionados irregularmente ou tentativas de acesso não autorizado, gerando alertas imediatos para a equipe.
+          </p>
+        </li>
+        <li class="mb-4 reveal">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill-lock me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 2-2h1c.269 0 .54.02.808.06A3.5 3.5 0 0 0 11.5 9h-6a3.5 3.5 0 0 0-3.5 3.5c0 .354.015.7.045 1zm8.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1zm1.5-1a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+            </svg>
+            Controle de Acesso de Funcionários
+          </h5>
+          <p class="texto-tecnologia">
+            Garanta que apenas o pessoal autorizado tenha acesso a áreas restritas do estacionamento, como escritórios ou depósitos, com registro completo de entradas e saídas.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalLoginCadastro" tabindex="-1" aria-labelledby="modalLoginCadastroLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color: #121212; color: #f0f0f0;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLoginCadastroLabel">Entrar na Conta</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body">
+
+        <form id="form-login">
+          <div class="mb-3">
+            <label for="emailLogin" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailLogin" placeholder="Digite seu email">
+          </div>
+          <div class="mb-3">
+            <label for="senhaLogin" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senhaLogin" placeholder="Digite sua senha">
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+        </form>
+
+        <div class="text-center">
+          <p>Não tem conta? <a href="#" id="mostrar-cadastro" style="color: #00d4ff;">Cadastre-se</a></p>
+        </div>
+
+        <form id="form-cadastro" style="display: none;">
+          <div class="mb-3">
+            <label for="nomeCadastro" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nomeCadastro" placeholder="Digite seu nome">
+          </div>
+          <div class="mb-3">
+            <label for="emailCadastro" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailCadastro" placeholder="Digite seu email">
+          </div>
+          <div class="mb-3">
+            <label for="senhaCadastro" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senhaCadastro" placeholder="Digite sua senha">
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mb-3">Cadastrar</button>
+        </form>
+
+        <div class="text-center">
+          <p>Já tem uma conta? <a href="#" id="voltar-login" style="color: #00d4ff;">Voltar ao Login</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const cadastroForm = document.getElementById("form-cadastro");
+  const loginForm = document.getElementById("form-login");
+  const mostrarCadastro = document.getElementById("mostrar-cadastro");
+  const voltarLogin = document.getElementById("voltar-login");
+
+  mostrarCadastro.addEventListener("click", function (e) {
+    e.preventDefault();
+    loginForm.style.display = "none";
+    cadastroForm.style.display = "block";
+  });
+
+  voltarLogin.addEventListener("click", function (e) {
+    e.preventDefault();
+    cadastroForm.style.display = "none";
+    loginForm.style.display = "block";
+  });
+</script>
+
+<script>
+  const elements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
