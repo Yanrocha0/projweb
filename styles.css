@@ -1,0 +1,457 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000428;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  height: 90px;
+  background-color: #000428;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 90px;
+  color: #00d4ff;
+}
+
+.nav-link {
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  line-height: 90px;
+}
+
+.nav-link:hover {
+  color: #00d4ff;
+}
+
+/* Carousel (Não presente no HTML atual, mas mantido) */
+.carousel-inner img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+  margin-top: 20px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #00d4ff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(100%);
+}
+
+/* Cards de Produtos (Usados para as Vantagens do Aeroporto) */
+.card {
+  background-color: #121212;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00d4ff;
+}
+
+.card-img-top {
+  height: 250px; /* Aumentando a altura das imagens */
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-title {
+  color: #00d4ff;
+}
+
+.card-text {
+  color: #ccc;
+}
+
+/* Botão */
+.btn-primary {
+  background-color: #00d4ff;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #008cba;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel-inner img {
+    height: 150px;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+
+  .navbar {
+    height: 70px;
+  }
+
+  .navbar-brand, .nav-link {
+    line-height: 70px;
+  }
+}
+
+/* Rodapé (Não presente no HTML atual, mas mantido) */
+footer {
+  padding: 20px 0; /* Diminuindo o padding do rodapé */
+}
+
+footer p {
+  font-size: 0.9rem; /* Diminuindo o tamanho da fonte no rodapé */
+}
+
+/* FAQ (Não presente no HTML atual, mas mantido) */
+.accordion-button {
+  background-color: #121212; /* Cor de fundo do botão do acordeão */
+  color: #f0f0f0; /* Cor do texto */
+  border: 1px solid #00d4ff; /* Borda azul */
+  font-size: 1.1rem; /* Tamanho do texto */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #00d4ff; /* Cor de fundo quando o item está aberto */
+  color: #121212; /* Cor do texto quando aberto */
+}
+
+.accordion-button:hover {
+  background-color: #008cba; /* Cor de fundo ao passar o mouse */
+  color: #f0f0f0; /* Cor do texto ao passar o mouse */
+  border: 1px solid #008cba; /* Borda quando passa o mouse */
+}
+
+.accordion-item {
+  background-color: #121212; /* Cor de fundo do item */
+  border: none; /* Remover borda */
+  margin-bottom: 10px; /* Espaçamento entre os itens */
+}
+
+.accordion-body {
+  background-color: #1a1a1a; /* Fundo mais escuro para o conteúdo do acordeão */
+  color: #ccc; /* Cor do texto do conteúdo */
+}
+
+.accordion-body p {
+  font-size: 1rem; /* Tamanho do texto no conteúdo */
+}
+
+.tecnologias-destaque {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  padding: 50px 20px;
+  border-radius: 20px;
+  color: #f0f0f0;
+}
+
+/* Alterações importantes para os títulos: */
+.titulo-tecnologia {
+  color: #00d4ff;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.titulo-tecnologia:hover {
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+.titulo-tecnologia::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: #00d4ff;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.3s ease;
+}
+
+.titulo-tecnologia:hover::after {
+  width: 100%;
+}
+
+.texto-tecnologia {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.imagem-tecnologia {
+  max-width: 200px;
+  filter: drop-shadow(0 0 10px #00d4ff);
+  transition: transform 0.4s ease;
+}
+
+.imagem-tecnologia:hover {
+  transform: scale(1.1);
+}
+
+/* Animação de entrada (reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Estilo para as imagens das companhias parceiras */
+.imagem-parceira {
+  margin-bottom: 1rem;
+  background-color: transparent;
+  /* ADIÇÃO: Efeito de aproximação para as imagens parceiras */
+  transition: transform 0.3s ease;
+}
+
+.imagem-parceira:hover {
+  transform: scale(1.1); /* Zoom um pouco mais pronunciado para logos */
+}
+
+
+h1,
+h1.mb-4 {
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+h2,
+h2.mb-4{
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+h1:hover {
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
+
+
+.is-invalid {
+  border-color: #ff4d4d !important;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.6);
+}
+.footer-translucido {
+  background-color: rgba(18, 18, 18, 0.5); /* semitransparente */
+  position: relative; /* não fixa mais no rodapé da tela */
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.footer-translucido:hover {
+  background-color: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(10px);
+}
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo-principal {
+  flex: 1;
+}
+
+/* Rodapé fixo visualmente ao final da página */
+.footer-translucido {
+  background-color: rgba(18, 18, 18, 0.5);
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.footer-translucido:hover {
+  background-color: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* Estilo moderno para campos de formulário */
+form .form-control {
+  background-color: #121212;
+  border: 1px solid #333;
+  color: #f0f0f0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 12px 15px;
+}
+
+form .form-control:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  background-color: #1a1a1a;
+  color: #00d4ff;
+}
+
+/* Labels mais estilosos */
+form .form-label {
+  color: #00d4ff;
+  font-weight: 500;
+}
+
+/* Botão mais fluido */
+form button.btn-primary {
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+
+/* Alerta de sucesso estilizado */
+#mensagem-sucesso {
+  border: 1px solid #00d4ff;
+  background-color: #1a1a1a;
+  color: #00d4ff;
+  font-weight: 500;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}
+#botao-duvida {
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: #00d4ff;
+  border: 1px solid #00d4ff;
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+#botao-duvida:hover {
+  background-color: #00d4ff;
+  color: #000428;
+}
+
+#caixa-duvida .form-control {
+  background-color: #121212;
+  border: 1px solid #00d4ff;
+  color: #f0f0f0;
+  border-radius: 8px;
+  padding: 15px;
+}
+/* Estilo do botão enviar */
+.btn-enviar {
+  background-color: #00d4ff;
+  color: #000428;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  background-color: #008cba;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+  color: white;
+}
+
+/* Campos estilosos */
+.form-control {
+  background-color: #121212;
+  border: 1px solid #333;
+  color: #f0f0f0;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+  background-color: #1a1a1a;
+  color: #00d4ff;
+}
+
+/* Reveal animation */
+/* Mantido como estava, sem duplicação */
+
+.dropdown-menu .dropdown-item {
+  color: #f0f0f0;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #00d4ff;
+  color: #000428;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* ADIÇÃO/ALTERAÇÃO: Estilo para as imagens principais (aeroporto e check-in) */
+/* Isso fará com que as imagens de "aviao_aeroporto.avif" e "check-in_avião.jpg" tenham o efeito de zoom */
+.container.my-5.reveal .col-md-6 img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Garante transição suave */
+}
+
+.container.my-5.reveal .col-md-6 img:hover {
+  transform: scale(1.03); /* Zoom leve ao passar o mouse */
+  box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4); /* Sombra para destacar, mantendo o estilo azul */
+}
+
+
+/* ALTEÇÃO: Estilo para a Imagem Central das Linhas de Defesa */
+.imagem-defesa-central {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  /* ALTERAÇÃO: Removido o box-shadow azul inicial */
+  box-shadow: none; /* Ou use: 0 0 25px rgba(0, 0, 0, 0.3); para uma sombra preta suave */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imagem-defesa-central:hover {
+  transform: scale(1.02); /* Leve zoom no hover */
+  /* ALTERAÇÃO: Removido o box-shadow azul no hover */
+  box-shadow: none; /* Ou use: 0 0 35px rgba(0, 0, 0, 0.5); para uma sombra preta mais intensa no hover */
+}
+
+/* Novo estilo para os títulos menores das linhas de defesa (já estava, mantido) */
+.titulo-tecnologia-pequeno {
+  color: #00d4ff;
+  font-size: 1.3rem; /* Um pouco menor que o titulo-tecnologia */
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 0 0 6px rgba(0, 212, 255, 0.2);
+  transition: text-shadow 0.3s ease;
+}
+
+.titulo-tecnologia-pequeno:hover {
+  text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+}
+
+/* Estilo para a lista de tópicos (mantido) */
+.texto-defesa-lista {
+  padding-left: 0;
+}
+
+/* Alinhar texto dos tópicos à esquerda em telas menores (mantido) */
+@media (max-width: 991.98px) {
+  .text-start {
+    text-align: center !important;
+  }
+  .texto-defesa-lista li {
+    text-align: center;
+  }
+}
+/* Estilo para os ícones de defesa (mantido) */
+.icone-defesa {
+  color: #00d4ff;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}

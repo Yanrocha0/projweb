@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato - SUA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de Navegação -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="LogodoSUA__2_-removebg-preview.png" height="50" alt="Logo SUA">
+    </a>
+
+    <ul class="navbar-nav d-flex flex-row me-auto mb-2 mb-lg-0">
+      <!-- Botão Setores com Submenu -->
+      <li class="nav-item dropdown px-2">
+        <a class="nav-link dropdown-toggle" href="#" id="setoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Setores
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="setoresDropdown">
+          <li><a class="dropdown-item" href="aeroporto.html" target="_blank">Aeroporto</a></li>
+          <li><a class="dropdown-item" href="audiotorio.html" target="_blank">Auditório</a></li>
+          <li><a class="dropdown-item" href="estacionamento.html" target="_blank">Estacionamento</a></li>
+          <li><a class="dropdown-item" href="refeitorio.html" target="_blank">Refeitório</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item px-2">
+        <a class="nav-link" href="funcionalidades.html">Funcionalidades</a>
+      </li>
+      <li class="nav-item px-2">
+        <a class="nav-link" href="sobre-nos.html">Sobre Nós</a>
+      </li>
+      
+      <li class="nav-item px-2">
+        <a class="nav-link" href="equipe.html">Equipe</a>
+      </li>
+    </ul>
+
+    <!-- Ícone de usuário -->
+    <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
+  <!-- Ícone de ajuda (contato) -->
+  <li class="nav-item me-3">
+    <a class="nav-link" href="contato.html" title="Contato">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#00d4ff" class="bi bi-question-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+      </svg>
+    </a>
+  </li>
+
+  <!-- Ícone de login -->
+  <li class="nav-item">
+    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLoginCadastro" title="Login">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#00d4ff" class="bi bi-people-fill" viewBox="0 0 16 16">
+        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+  </div>
+</nav>  
+</body>
+</html>
+
+<!-- CONTEÚDO -->
+<main class="container mt-5 mb-5 conteudo-principal">
+  <h1 class="mb-4">Fale Conosco</h1>
+  <p class="mb-4">Preencha o formulário abaixo e entraremos em contato com você o mais breve possível.</p>
+
+  <!-- Formulário principal com envio por email -->
+  <form action="https://formsubmit.co/seuemail@gmail.com" method="POST" class="reveal" id="form-contato">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nova mensagem de contato - SUA">
+
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
+    </div>
+    <div class="mb-3">
+      <label for="mensagem" class="form-label">Mensagem</label>
+      <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
+    </div>
+    <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+  </form>
+
+  <!-- Caixa de dúvida extra -->
+  <div class="mt-5 reveal">
+    <h5>Está com dúvidas ou problemas com nosso sistema?</h5>
+    <button id="botao-duvida" class="btn btn-outline-info mt-2">Abrir Caixa de Dúvida</button>
+
+    <form action="https://formsubmit.co/seuemail@gmail.com" method="POST" id="form-duvida" class="mt-3" style="display: none;">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Nova dúvida enviada - SUA">
+
+      <label for="duvidaTexto" class="form-label">Descreva seu problema:</label>
+      <textarea id="duvidaTexto" name="mensagem" class="form-control" rows="5" placeholder="Digite aqui sua dúvida ou problema..." required></textarea>
+      <button type="submit" class="btn-enviar mt-3">Enviar Dúvida</button>
+    </form>
+  </div>
+
+  <!-- Informações adicionais -->
+  <div class="mt-5 reveal">
+    <h5>Outros canais de atendimento:</h5>
+    <ul>
+      <li>Email: 235095.aluno@iserj.edu.br</li>
+      <li>Email: email.atella@iserj.edu.br</li>
+      <li>Email: email.eduardo@iserj.edu.br</li>
+      <li>Email: email.jose@iserj.edu.br</li>
+      <li>Telefone: (21) 99999-9999</li>
+      <li>Endereço: Rua Mariz e Barros, 273 - Tijuca</li>
+    </ul>
+  </div>
+</main>
+
+<!-- Rodapé -->
+<footer class="footer-translucido text-white text-center p-4 mt-auto">
+  <div class="container">
+    <p>Entre em contato: <a href="mailto:iserj.cem@gmail.com" style="color: #00d4ff;">iserj.cem@gmail.com</a></p>
+    <p class="mb-0">Projeto desenvolvido para TCC 2025 – Yan Rocha, Eduardo, Thiago Atella e José Filipe</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Mostrar caixa de dúvida
+  document.getElementById('botao-duvida').addEventListener('click', function () {
+    const caixa = document.getElementById('form-duvida');
+    caixa.style.display = caixa.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Animações reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  function scrollReveal() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) el.classList.add('visible');
+    });
+  }
+  window.addEventListener('scroll', scrollReveal);
+  window.addEventListener('load', scrollReveal);
+</script>
+
+
+
+</body>
+</html>
