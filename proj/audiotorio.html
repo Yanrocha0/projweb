@@ -3,13 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUA - Auditorio </title>
+  <title>SUA - Auditório</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos Adicionais para Melhorar a Apresentação */
+    body {
+      background-color: #0f0f0f; /* Fundo mais escuro para contraste */
+      color: #f0f0f0; /* Cor do texto padrão mais clara */
+    }
+
+    .navbar {
+      background-color: #1a1a1a; /* Fundo da navbar mais escuro */
+      border-bottom: 1px solid #333;
+    }
+
+    .navbar-brand img {
+      filter: brightness(1.2); /* Deixa o logo um pouco mais claro */
+    }
+
+    .nav-link {
+      color: #bbbbbb !important; /* Cor dos links mais suave */
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #00d4ff !important; /* Cor de hover para os links */
+    }
+
+    .dropdown-menu {
+      background-color: #1a1a1a;
+      border: none;
+    }
+
+    .dropdown-item {
+      color: #bbbbbb;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #00d4ff;
+      color: #1a1a1a; /* Texto mais escuro no hover */
+    }
+
+    .titulo-tecnologia {
+      color: #00d4ff; /* Títulos em destaque com a cor de acentuação */
+      font-weight: 700;
+      text-shadow: 0 0 5px rgba(0, 212, 255, 0.4);
+    }
+
+    .titulo-tecnologia-pequeno {
+      color: #00d4ff;
+      font-weight: 600;
+    }
+
+    .texto-tecnologia {
+      color: #cccccc; /* Texto mais claro para melhor legibilidade */
+      line-height: 1.8;
+    }
+
+    .card {
+      background-color: #1a1a1a; /* Fundo dos cards mais escuro */
+      border: 1px solid #333;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px); /* Efeito de elevação no hover */
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2); /* Sombra mais destacada */
+    }
+
+    .card-title {
+      color: #00d4ff;
+      font-weight: 600;
+    }
+
+    .card-text {
+      color: #bbbbbb;
+    }
+
+    .imagem-parceira {
+      filter: grayscale(80%) brightness(1.2); /* Parceiras em tons de cinza com brilho */
+      transition: filter 0.3s ease;
+    }
+
+    .imagem-parceira:hover {
+      filter: grayscale(0%) brightness(1); /* Colorida no hover */
+    }
+
+    .icone-defesa {
+      color: #00d4ff; /* Ícones de defesa na cor de acentuação */
+    }
+
+    .texto-defesa-lista li {
+      padding-left: 1rem; /* Espaçamento para os itens da lista */
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Estilo para o vídeo */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+      height: 0;
+      overflow: hidden;
+      border-radius: 0.5rem; /* Border-radius similar to images */
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Shadow similar to images */
+    }
+
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video covers the area */
+    }
+  </style>
 </head>
 <body>
 
-<!-- Barra de Navegação -->
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">
@@ -17,14 +140,13 @@
     </a>
 
     <ul class="navbar-nav d-flex flex-row me-auto mb-2 mb-lg-0">
-      <!-- Botão Setores com Submenu -->
       <li class="nav-item dropdown px-2">
         <a class="nav-link dropdown-toggle" href="#" id="setoresDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Setores
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="setoresDropdown">
           <li><a class="dropdown-item" href="aeroporto.html" target="_blank">Aeroporto</a></li>
-          <li><a class="dropdown-item" href="audiotorio.html" target="_blank">Auditório</a></li>
+          <li><a class="dropdown-item" href="auditorio.html" target="_blank">Auditório</a></li>
           <li><a class="dropdown-item" href="estacionamento.html" target="_blank">Estacionamento</a></li>
           <li><a class="dropdown-item" href="refeitorio.html" target="_blank">Refeitório</a></li>
         </ul>
@@ -36,38 +158,227 @@
       <li class="nav-item px-2">
         <a class="nav-link" href="sobre-nos.html">Sobre Nós</a>
       </li>
-   
+
       <li class="nav-item px-2">
         <a class="nav-link" href="equipe.html">Equipe</a>
       </li>
     </ul>
 
-    <!-- Ícone de usuário -->
     <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
-  <!-- Ícone de ajuda (contato) -->
-  <li class="nav-item me-3">
-    <a class="nav-link" href="contato.html" title="Contato">
-      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#00d4ff" class="bi bi-question-circle" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
-      </svg>
-    </a>
-  </li>
+      <li class="nav-item me-3">
+        <a class="nav-link" href="contato.html" title="Contato">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#00d4ff" class="bi bi-question-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+          </svg>
+        </a>
+      </li>
 
-  <!-- Ícone de login -->
-  <li class="nav-item">
-    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLoginCadastro" title="Login">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#00d4ff" class="bi bi-people-fill" viewBox="0 0 16 16">
-        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
-      </svg>
-    </a>
-  </li>
-</ul>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLoginCadastro" title="Login">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#00d4ff" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+          </svg>
+        </a>
+      </li>
+    </ul>
 
   </div>
 </nav>
 
-<!-- Modal de Login e Cadastro -->
+<div class="container my-5 reveal">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="https://live.staticflickr.com/2695/4147991736_157fdbe1a4.jpg" class="img-fluid rounded shadow-lg" alt="Imagem de Auditório">
+    </div>
+    <div class="col-md-6">
+      <h2 class="titulo-tecnologia">Segurança e Eficiência para Auditórios</h2>
+      <p class="texto-tecnologia">
+        Nosso sistema de acesso inteligente otimiza a gestão de eventos em auditórios, garantindo controle de público e agilidade na entrada. Utilizando tecnologias como QR Code, reconhecimento facial e RFID, proporcionamos uma experiência segura e fluida para organizadores e participantes.
+      </p>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h3 class="titulo-tecnologia mb-4">Parceiros em Eventos e Cultura</h3>
+  <div class="row justify-content-center text-center">
+    <div class="col-6 col-md-3 mb-4">
+      <img src="https://blog.sympla.com.br/wp-content/uploads/2022/09/banner-sympla-1.jpg" class="img-fluid imagem-parceira" alt="Ticketmaster">
+    </div>
+    <div class="col-6 col-md-3 mb-4">
+      <img src="https://blog.ticketmaster.com.br/wp-content/uploads/2020/06/B2B_SitePreview.jpg" class="img-fluid imagem-parceira" alt="Sympla">
+    </div>
+    <div class="col-6 col-md-3 mb-4">
+      <img src="https://cdn.evbstatic.com/s3-build/perm_001/55d606/django/images/logos/eb_orange_on_white_1200x630.png" class="img-fluid imagem-parceira" alt="Ingresse">
+    </div>
+    <div class="col-6 col-md-3 mb-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN-eDEy0Bvpav33qDC77FN3xslxNfWAa76VQ&s" class="img-fluid imagem-parceira" alt="Eventbrite">
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-md-2">
+      <img src="https://images.pexels.com/photos/1181414/pexels-photo-1181414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid rounded shadow-lg" alt="Pessoas entrando no Auditório">
+    </div>
+    <div class="col-md-6 order-md-1">
+      <h3 class="titulo-tecnologia">Controle de Acesso na Entrada do Auditório</h3>
+      <p class="texto-tecnologia">
+        Com o SUA, o acesso ao seu auditório é rápido e controlado. Automatizamos a checagem de ingressos e identidade, minimizando filas e garantindo a segurança de todos os participantes.
+      </p>
+      <ul class="texto-tecnologia list-unstyled">
+        <li class="mb-2">✔️ Validação de ingressos e credenciais em tempo real</li>
+        <li class="mb-2">✔️ Redução de tempo de espera e aglomerações</li>
+        <li class="mb-2">✔️ Detecção de acessos não autorizados com IA</li>
+        <li class="mb-2">✔️ Integração com catracas, leitores e câmeras</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h3 class="titulo-tecnologia mb-4">Vantagens do Nosso Sistema em Auditórios</h3>
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">Segurança Reforçada</h5>
+          <p class="card-text">Garanta a integridade de eventos e do público com controle rigoroso.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">Gestão Otimizada</h5>
+          <p class="card-text">Informações precisas sobre o público para melhor planejamento e relatórios.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">Experiência Superior</h5>
+          <p class="card-text">Entrada rápida e sem complicações para um público satisfeito.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h2 class="titulo-tecnologia mb-5">Por Que Auditórios Devem Adquirir o Sistema SUA?</h2>
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <img src="https://images.pexels.com/photos/2088210/pexels-photo-2088210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+           class="img-fluid rounded shadow-lg"
+           alt="Auditório vazio iluminado"
+           style="max-width: 90%; height: auto; display: block; margin: 0 auto;">
+    </div>
+    <div class="col-md-6 text-start">
+      <p class="texto-tecnologia lead">
+        Em um espaço dedicado a experiências como shows, palestras e espetáculos, a **segurança e a organização impecável** são essenciais. Nosso Sistema Universal de Acesso (SUA) é a **solução completa** para otimizar a gestão de público e aprimorar a experiência em seu auditório.
+      </p>
+      <ul class="list-unstyled texto-tecnologia">
+        <li class="mb-3">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-shield-lock-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 0c-.69 0-1.843.265-2.928.567-1.113.325-2.233.692-2.879 1.093C.76 1.791 0 2.118 0 2.5V14a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5V2.5c0-.382-.76-1.709-2.193-2.503C12.712.747 11.592.38 10.472.056 9.352.265 8.21 0 8 0m-.5 8.5V10a.5.5 0 0 1-.5.5H6a.5.5 0 0 1-.5-.5V8.5a1.5 1.5 0 1 1 3 0Zm0 1a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H8a.5.5 0 0 1-.5-.5Z"/>
+            </svg>
+            Controle de Lotação Inteligente
+          </h5>
+          <p>Garanta a segurança e o conforto do público, respeitando a capacidade máxima do espaço e evitando aglomerações. O sistema controla a entrada e saída em tempo real.</p>
+        </li>
+        <li class="mb-3">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-clock-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+            </svg>
+            Otimização da Experiência do Evento
+          </h5>
+          <p>Reduza filas na entrada, agilize o acesso e proporcione uma jornada mais fluida e agradável para os participantes, impactando positivamente a reputação do seu auditório.</p>
+        </li>
+        <li class="mb-3">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-graph-up-arrow me-2 icone-defesa" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 3.5a.5.5 0 0 1 .55-.5"/>
+            </svg>
+            Análise e Gestão de Dados
+          </h5>
+          <p>Com dados precisos sobre o fluxo de público, seu auditório pode otimizar recursos, entender padrões de acesso e aprimorar o planejamento de futuros eventos, aumentando a eficiência operacional.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="container my-5 reveal text-center">
+  <h3 class="titulo-tecnologia mb-5">Nossas Linhas de Defesa do Sistema Universal de Acesso</h3>
+
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-6 col-md-8 mb-4 mb-lg-0">
+      <div class="video-container rounded shadow-lg">
+        <video autoplay loop muted playsinline>
+          <source src="v" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 text-start">
+      <ul class="list-unstyled texto-defesa-lista">
+        <li class="mb-4 reveal">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-ticket-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M11.25 0.5a.75.75 0 0 0-.75-.75H5.5A.75.75 0 0 0 4.75 0.5V1.75a.75.75 0 0 0 .75.75H10.5a.75.75 0 0 0 .75-.75zM12 3a.5.5 0 0 0-.5-.5h-9A.5.5 0 0 0 2 3.5V13h12V3.5zM3 13.5a.5.5 0 0 0 .5.5H12.5a.5.5 0 0 0 .5-.5V13H3z"/>
+              <path d="M12 3a.5.5 0 0 0-.5-.5h-9A.5.5 0 0 0 2 3.5V13h12V3.5zM3 13.5a.5.5 0 0 0 .5.5H12.5a.5.5 0 0 0 .5-.5V13H3zM4 11.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            Validação de Ingressos e Credenciais
+          </h5>
+          <p class="texto-tecnologia">
+            Nosso sistema garante que apenas ingressos válidos e credenciais autorizadas sejam aceitos, eliminando fraudes e acessos indevidos ao seu evento.
+          </p>
+        </li>
+        <li class="mb-4 reveal">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-camera-video-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M0 5.5A.5.5 0 0 1 .5 5H4a.5.5 0 0 1 0 1H1.5a.5.5 0 0 1-.5-.5zM1.5 8a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H1.5a.5.5 0 0 1-.5-.5zM1.5 10.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H1.5a.5.5 0 0 1-.5-.5zM12 5.5a.5.5 0 0 1 .5-.5H15.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zM12.5 8a.5.5 0 0 0 .5-.5H15.5a.5.5 0 0 0 0 1H12.5a.5.5 0 0 0-.5-.5zM12.5 10.5a.5.5 0 0 0 .5-.5H15.5a.5.5 0 0 0 0 1H12.5a.5.5 0 0 0-.5-.5zM9 13.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              <path d="M.5 3.5a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5H.5zM2 4h12v7H2z"/>
+            </svg>
+            Monitoramento em Tempo Real
+          </h5>
+          <p class="texto-tecnologia">
+            Com câmeras integradas e IA, nosso sistema oferece uma visão completa e contínua do fluxo de pessoas, permitindo identificar e reagir a qualquer anomalia.
+          </p>
+        </li>
+        <li class="mb-4 reveal">
+          <h5 class="titulo-tecnologia-pequeno">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bell-fill me-2 icone-defesa" viewBox="0 0 16 16">
+              <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.25-13.84a1.5 1.5 0 0 0-2.5 0L1.76 6.84a1.5 1.5 0 0 0 0 1.5l5.5 6.5a1.5 1.5 0 0 0 2.5 0l5.5-6.5a1.5 1.5 0 0 0 0-1.5z"/>
+            </svg>
+            Alertas e Resposta Rápida
+          </h5>
+          <p class="texto-tecnologia">
+            Em caso de qualquer incidente ou acesso irregular, a equipe de segurança é alertada instantaneamente, possibilitando uma intervenção imediata e eficaz.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="modalLoginCadastro" tabindex="-1" aria-labelledby="modalLoginCadastroLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="background-color: #121212; color: #f0f0f0;">
@@ -77,7 +388,6 @@
       </div>
       <div class="modal-body">
 
-        <!-- Formulário de Login -->
         <form id="form-login">
           <div class="mb-3">
             <label for="emailLogin" class="form-label">Email</label>
@@ -94,7 +404,6 @@
           <p>Não tem conta? <a href="#" id="mostrar-cadastro" style="color: #00d4ff;">Cadastre-se</a></p>
         </div>
 
-        <!-- Formulário de Cadastro -->
         <form id="form-cadastro" style="display: none;">
           <div class="mb-3">
             <label for="nomeCadastro" class="form-label">Nome</label>
@@ -120,7 +429,6 @@
   </div>
 </div>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   const cadastroForm = document.getElementById("form-cadastro");
@@ -140,6 +448,23 @@
     loginForm.style.display = "block";
   });
 </script>
+
+<script>
+  const elements = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+<footer class="footer-translucido text-white text-center p-4 mt-5">
+  <div class="container">
+    <p>Entre em contato: <a href="mailto:suporte@sua.com" style="color: #00d4ff;">iserj.cem@gmail.com</a></p>
+    <p class="mb-0">Projeto desenvolvido para TCC 2025 – Yan Rocha, Eduardo, Thiago Atella e José Filipe</p>
+  </div>
+</footer>
 
 </body>
 </html>
